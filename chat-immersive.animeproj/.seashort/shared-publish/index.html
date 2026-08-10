@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leo Deoraphly</title>
+  <meta name="seashort-play-mode" content="shared" />
+  <meta name="seashort-runtime" content="immersive-chat" />
+  <meta name="seashort-card-id" content="name:leo-deoraphly" />
+  <style>
+    body { margin: 0; font: 15px/1.5 system-ui, sans-serif; background: #0b0b10; color: #e8e8ef;
+      display: grid; place-items: center; min-height: 100dvh; }
+    .box { max-width: 28rem; padding: 1.5rem; text-align: center; opacity: 0.9; }
+    a { color: #9ecbff; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p>Launching shared player…</p>
+    <p id="fallback" hidden>
+      If you are not redirected,
+      <a id="manual" href="#">open the player</a>.
+    </p>
+  </div>
+  <script>
+    (function () {
+      var cardId = "name:leo-deoraphly";
+      var playerBase = "https://immersive-chat.play.seachat.ai";
+      var cardHost = location.origin;
+      var url = playerBase + '/?cardId=' + encodeURIComponent(cardId)
+        + '&cardHost=' + encodeURIComponent(cardHost);
+      var manual = document.getElementById('manual');
+      var fallback = document.getElementById('fallback');
+      if (manual) manual.href = url;
+      if (fallback) fallback.hidden = false;
+      location.replace(url);
+    })();
+  </script>
+</body>
+</html>

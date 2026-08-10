@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "card": {
+    "cardId": "name:leo-deoraphly",
+    "name": "Leo Deoraphly",
+    "protocol": "text",
+    "requiredCapabilities": []
+  },
+  "runtime": {
+    "kind": "shared",
+    "id": "immersive-chat",
+    "version": "1.0.0",
+    "compat": "^1.0.0"
+  },
+  "boundAt": "2026-07-26T10:59:41.233Z"
+}

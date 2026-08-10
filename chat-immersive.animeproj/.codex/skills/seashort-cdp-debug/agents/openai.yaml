@@ -1,0 +1,4 @@
+interface:
+  display_name: "SeaShort CDP Debug"
+  short_description: "Debug Electron previews through CDP"
+  default_prompt: "Use $seashort-cdp-debug to inspect the current Electron preview, interact with the Vite frame, and save a verification screenshot."

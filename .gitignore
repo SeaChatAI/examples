@@ -1,0 +1,51 @@
+# SeaShort 示例集合
+#
+# 每个 *.animeproj 是一个可运行的角色世界 Web 工程示例。
+# 仅跟踪工程源码；运行时状态、构建产物、依赖、临时证据一律排除。
+
+# 系统 / 编辑器
+.DS_Store
+
+# 依赖与构建产物（可重建）
+node_modules/
+*/node_modules/
+dist/
+*/dist/
+vendor/
+*/vendor/
+# exception: probe ships a local render-only world-engine fork
+!immersive-chat-rust-probe.animeproj/vendor/
+!immersive-chat-rust-probe.animeproj/vendor/**
+.cache/
+*/.cache/
+
+# card 内嵌的上游/服务端副本（各自有独立仓库，不随示例入库）
+*/services/
+
+# 运行时本地状态（每次运行都变，含机器绝对路径）
+*/.seashort/runtime.json
+*/.data/
+*/.canvas/
+*/.playwright-mcp/
+
+# 调试证据 / 临时截图
+*/.verify-shots/
+*/.verify-flows/
+*/*.png
+
+# agent 工作目录
+*/.codex/
+*/tasks/
+
+# 例外：blank/starter/chat-immersive 是「起手模板」（create_project 直接 clone 它们建新项目），
+# 其 .codex/skills 是新项目必需的 agent 技能，必须随模板入库；学习类示例的 .codex/ 仍作工作态忽略。
+!blank.animeproj/.codex/
+!blank.animeproj/.codex/skills/**
+!starter.animeproj/.codex/
+!starter.animeproj/.codex/skills/**
+!chat-immersive.animeproj/.codex/
+!chat-immersive.animeproj/.codex/skills/**
+
+# probe local world-engine (render shell)
+!immersive-chat-rust-probe.animeproj/vendor/
+!immersive-chat-rust-probe.animeproj/vendor/**

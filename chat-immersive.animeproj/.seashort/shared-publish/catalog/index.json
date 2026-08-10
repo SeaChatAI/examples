@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "runtimeId": "immersive-chat",
+  "generatedAt": "2026-07-26T10:59:41.238Z",
+  "cards": [
+    {
+      "cardId": "name:leo-deoraphly",
+      "name": "Leo Deoraphly",
+      "runtimeId": "immersive-chat",
+      "bindingPath": "bindings/name:leo-deoraphly.json",
+      "cardPath": "cards/name:leo-deoraphly.json"
+    }
+  ]
+}

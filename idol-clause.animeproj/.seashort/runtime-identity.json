@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "kind": "shared",
+  "runtime": "immersive-chat",
+  "runtimeVersion": "1.0.0",
+  "compat": "^1.0.0"
+}

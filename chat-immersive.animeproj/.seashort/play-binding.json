@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "playMode": "shared",
+  "appId": "5150a4b5-9926-44d7-8ae3-ccb05fae491c",
+  "slug": "leo-deoraphly-2",
+  "appUrl": "https://leo-deoraphly-2.play.seachat.ai/",
+  "cardId": "name:leo-deoraphly",
+  "runtimeId": "immersive-chat",
+  "runtimeVersion": "1.0.0",
+  "compat": "^1.0.0",
+  "binding": {
+    "version": 1,
+    "card": {
+      "cardId": "name:leo-deoraphly",
+      "name": "Leo Deoraphly",
+      "protocol": "text",
+      "requiredCapabilities": []
+    },
+    "runtime": {
+      "kind": "shared",
+      "id": "immersive-chat",
+      "version": "1.0.0",
+      "compat": "^1.0.0"
+    },
+    "boundAt": "2026-07-26T10:59:41.233Z"
+  },
+  "playerUrl": "https://immersive-chat.play.seachat.ai/?cardId=name%3Aleo-deoraphly&cardHost=https%3A%2F%2Fleo-deoraphly-2.play.seachat.ai",
+  "updatedAt": "2026-07-26T10:59:44.585Z"
+}

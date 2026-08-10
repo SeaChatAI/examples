@@ -1,0 +1,38 @@
+{
+  "name": "seashort-immersive-chat-cloud",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Embedded single-card Experience: cloud worldcompute + project-owned PlayerCore",
+  "scripts": {
+    "dev": "bun run ./scripts/ensure-node-modules.ts && node ./node_modules/vite/bin/vite.js",
+    "dev:hybrid": "bun run ./scripts/link-deps.ts && bun run ./scripts/ensure-node-modules.ts && node ./node_modules/vite/bin/vite.js",
+    "link-deps": "bun run ./scripts/link-deps.ts",
+    "ensure-nm": "bun run ./scripts/ensure-node-modules.ts",
+    "build": "node ./node_modules/vite/bin/vite.js build",
+    "preview": "node ./node_modules/vite/bin/vite.js preview",
+    "test": "bun test ./test",
+    "check": "bun run test && bunx tsc --noEmit && bun run build && bun run card:validate",
+    "card:validate": "node ./node_modules/@seachat/sdk/render/dist/cli.js card:validate --cwd .",
+    "accept:cloud-live": "bash ./scripts/accept-cloud-live.sh",
+    "accept:cloud-ui": "bash ./scripts/accept-cloud-ui.sh",
+    "accept:hard": "bun run ./scripts/accept-hard.ts"
+  },
+  "dependencies": {
+    "@fontsource/noto-serif-sc": "^5",
+    "@fontsource/playfair-display": "^5",
+    "@seashort/card-kit": "file:../../sdks/card-kit",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "@seachat/sdk": "file:../../sdks/seachat-sdk"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^6.0.3",
+    "https-proxy-agent": "^5.0.1",
+    "proxy-from-env": "^2.1.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.1.3"
+  }
+}

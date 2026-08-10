@@ -1,0 +1,4 @@
+interface:
+  display_name: "ST to SeaShort"
+  short_description: "Migrate SillyTavern cards to SeaShort"
+  default_prompt: "Use $st-to-seashort to migrate a SillyTavern card into this SeaShort role-world project."

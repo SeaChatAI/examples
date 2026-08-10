@@ -1,0 +1,12 @@
+{
+  "characters": [
+    {
+      "id": "kieran-vale",
+      "name": "Kieran Vale",
+      "description": "Cover art for the Idol Clause experience",
+      "references": ["kieran-vale-cover.webp"],
+      "tags": ["cover", "主角"],
+      "created_at": "2026-07-22T00:00:00.000Z"
+    }
+  ]
+}
