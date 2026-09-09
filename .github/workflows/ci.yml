@@ -1,0 +1,45 @@
+name: Examples CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+concurrency:
+  group: examples-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Checkout SDK source
+        uses: actions/checkout@v4
+        with:
+          repository: SeaChatAI/sdk
+          ref: develop
+          path: sdks/seachat-sdk
+      - name: Checkout card-kit source
+        uses: actions/checkout@v4
+        with:
+          repository: SeaChatAI/desktop
+          ref: develop
+          path: _desktop
+          sparse-checkout: |
+            sdks/card-kit
+      - name: Prepare shared dependencies
+        run: |
+          mv _desktop/sdks/card-kit sdks/card-kit
+          rm -rf _desktop
+          (cd sdks/seachat-sdk && bun install && bun run build)
+          (cd sdks/card-kit && bun install && bun run build)
+      - name: Check templates
+        run: |
+          set -euo pipefail
+          for project in chat-immersive.animeproj idol-clause.animeproj immersive-chat-cloud.animeproj; do
+            (cd "$project" && bun install && bun run test && bunx tsc --noEmit && bun run build && node ../sdks/seachat-sdk/render/dist/cli.js card:validate)
+          done
