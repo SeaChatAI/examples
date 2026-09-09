@@ -29,7 +29,6 @@ jobs:
           repository: SeaChatAI/desktop
           ref: develop
           path: _desktop
-          token: ${{ secrets.SEACHAT_CI_READ_TOKEN }}
           sparse-checkout: |
             sdks/card-kit
       - name: Prepare shared dependencies
